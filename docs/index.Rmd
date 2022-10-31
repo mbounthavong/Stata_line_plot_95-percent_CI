@@ -155,7 +155,7 @@ knitr::include_graphics("connected_errorbars.png")
 ```
 
 ### Conclusions
-Adding the 95% CI allows the reader to visualize the variance surrounding the mean total healthcare expenditure per year. This added dimension to the two-way line plot is useful for publication-quality images. However, these series of commands can be used for any continuous data type. I w0uld recommend using this for data that is plotted along time on the x-axis. 
+Adding the 95% CI allows the reader to visualize the variance surrounding the mean total healthcare expenditure per year. This added dimension to the two-way line plot is useful for publication-quality images. However, these series of commands can be used for any continuous data type. I would recommend using this for data that is plotted along time on the x-axis. 
 
 
 ### Acknowledgement
