@@ -39,7 +39,7 @@ To add 95% CI to the Stata `connected` line plot, we will use the [Medical Expen
 ## Motivating example
 In this tutorial, we are interested in plotting the average total healthcare expenditures along with the 95% CI of responders from 2008 to 2019. 
 
-### Step 1: Load the data into Stata. 
+### Step 1: Load the data into Stata
 First, we will need to load the data into Stata. The data we will use for this tutorial is `adjusted_combined_data_post.dta`. 
 
 ```{stata, collectcode=TRUE}
