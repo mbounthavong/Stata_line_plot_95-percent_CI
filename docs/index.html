@@ -649,7 +649,7 @@ The data are stored in Stata and can be retrieved using the
 <p>Now, that we have the 95% CI for total healthcare expenditure at each
 year, we can plot these using the <code>rcap</code> command. This allows
 us to create error bars using the variables we generated for the upper
-(<code>high</code> and lower <code>low</code> bounds of the 95% CI.</p>
+<code>high</code> and lower <code>low</code> bounds of the 95% CI.</p>
 <pre class="stata"><code>// Generate the average total healthcare expenditure by year
 egen mean_expenditure = mean(totexp), by(year)
 
