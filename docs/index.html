@@ -650,6 +650,34 @@ The data are stored in Stata and can be retrieved using the
 year, we can plot these using the <code>rcap</code> command. This allows
 us to create error bars using the variables we generated for the upper
 (<code>high</code> and lower <code>low</code> bounds of the 95% CI.</p>
+<pre class="stata"><code>// Generate the average total healthcare expenditure by year
+egen mean_expenditure = mean(totexp), by(year)
+
+
+// Generate the upper and low bound of the 95% CI variable
+gen high = .
+gen low = .
+
+// Loop commmand
+forvalues i = 2008/2019 {
+    ci mean totexp if year == `i&#39;
+    replace high = r(ub) if year == `i&#39;
+    replace low = r(lb) if year == `i&#39;
+}
+
+// Sort by year and generate the two-way line plot
+sort year
+graph twoway (rcap low high year) ///
+             (connected mean_expenditure year, color(navy) msize(small) ///
+                        title(&quot;Total healthcare expenditures (2008-2019)&quot;) ///
+                        ytitle(&quot;Average total healthcare expenditure ($)&quot;) ///
+                        xtitle(&quot;Time (year)&quot;) ///
+                        xlab(2008(1)2019, labsize(vsmall)) ///
+                        ylab(, labsize(vsmall) nogrid) ///
+                        graphregion(color(white)) ///
+                        bgcolor(white) ///
+                        color(navy))
+graph export &quot;connected_errorbars.png&quot;, replace</code></pre>
 <pre><code>Running C:\Users\mbounthavong\Dropbox\Marks blog\Stata in R Markdown\profile&gt;  ...
 
 
@@ -752,6 +780,7 @@ Exchange</a> and <a href="https://www.statalist.org/forums/forum/general-stata-d
 Forum</a>.</p>
 <p>This is a work in progress, and I will likely update this as I learn
 more efficient methods to produce 95% CI around average values.</p>
+<p>The Github code for this R Markdown tutorial is located <a href="https://github.com/mbounthavong/STATA-programming-and-codes/blob/4201dedddd943a546f5fa8df06bc3060296f7904/two-way%20line%20plot%20and%2095%25%20confidence%20intervals">here</a>.</p>
 </div>
 </div>
 

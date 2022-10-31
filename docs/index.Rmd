@@ -117,9 +117,9 @@ forvalues i = 2008/2019 {
 ```
 
 ### Step 6: Plot the 95% CI
-Now, that we have the 95% CI for total healthcare expenditure at each year, we can plot these using the `rcap` command. This allows us to create error bars using the variables we generated for the upper (`high` and lower `low` bounds of the 95% CI. 
+Now, that we have the 95% CI for total healthcare expenditure at each year, we can plot these using the `rcap` command. This allows us to create error bars using the variables we generated for the upper `high` and lower `low` bounds of the 95% CI. 
 
-```{stata, echo = FALSE, changelog = FALSE}
+```{stata, echo = TRUE, changelog = FALSE}
 // Generate the average total healthcare expenditure by year
 egen mean_expenditure = mean(totexp), by(year)
 
