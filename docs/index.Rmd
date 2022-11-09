@@ -79,7 +79,7 @@ graph export "connected1.png", replace
 ```
 
 ```{r, echo = FALSE}
-knitr::include_graphics("connected1.png")
+knitr::include_graphics("connected1.png", error = FALSE)
 ```
 
 ### Step 4: Estimate the 95% CI
