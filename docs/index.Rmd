@@ -64,6 +64,7 @@ We can create a two-way line plot using the `connected` command. We'll plot he a
 We estimate the mean total healthcare expenditure using the `egen` command by year. Then we use the `graph twoway connected` code to generate the two-way line plot. Before you plot the figure, make sure that you sort by year. Otherwise, you will be a spaghetti-like plot where Stata will try to draw the line across the years if they are not sorted or in order. 
 
 ```{stata, echo = FALSE, cleanlog = FALSE}
+
 egen mean_expenditure = mean(totexp), by(year)
 sort year
 graph twoway connected mean_expenditure year, ///
